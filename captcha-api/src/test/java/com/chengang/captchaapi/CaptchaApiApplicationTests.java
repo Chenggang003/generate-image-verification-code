@@ -1,6 +1,7 @@
 package com.chengang.captchaapi;
 
 import com.wf.captcha.ArithmeticCaptcha;
+import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.SpecCaptcha;
 import com.wf.captcha.base.Captcha;
 import org.junit.jupiter.api.Test;
@@ -23,18 +24,23 @@ class CaptchaApiApplicationTests {
 
     @Test
     void contextLoads() throws Exception {
-        Captcha specCaptcha = new SpecCaptcha(130, 48);
-        specCaptcha.setCharType(Captcha.TYPE_ONLY_CHAR);
-        generateImageCode(specCaptcha);
+//        Captcha specCaptcha = new SpecCaptcha(130, 48);
+//        specCaptcha.setCharType(Captcha.TYPE_ONLY_CHAR);
+//        generateImageCode(specCaptcha);
 
 //        Captcha chineseCaptcha = new ChineseCaptcha(130, 48);
 //        generateImageCode(chineseCaptcha);
 
 //        Captcha arithmeticCaptcha = new ArithmeticCaptcha(130, 48);
 //        arithmeticCaptcha.setLen(3);
+
 //        arithmeticCaptcha.setFont(new Font("楷体", Font.PLAIN, 28));
 //        arithmeticCaptcha.setFont(Captcha.FONT_9);
 //        generateImageCode(arithmeticCaptcha);
+
+        Captcha gifCaptcha = new GifCaptcha(130, 48);
+        generateImageCode(gifCaptcha);
+
     }
 
     private void generateImageCode(Captcha captcha) throws FileNotFoundException {
