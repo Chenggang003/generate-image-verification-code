@@ -4,6 +4,7 @@ import com.wf.captcha.ArithmeticCaptcha;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.SpecCaptcha;
 import com.wf.captcha.base.Captcha;
+import com.wf.captcha.utils.CaptchaUtil;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,7 +41,6 @@ class CaptchaApiApplicationTests {
 
         Captcha gifCaptcha = new GifCaptcha(130, 48);
         generateImageCode(gifCaptcha);
-
     }
 
     private void generateImageCode(Captcha captcha) throws FileNotFoundException {

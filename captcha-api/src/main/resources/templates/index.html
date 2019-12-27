@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+
+    <div>
+        <img alt="验证码" onclick = "this.src='/render?d=' + new Date()*1" src="/render" />
+    </div>
+    <form action="http://localhost:8080/valid" method="post">
+        <input type="text" name="code"/>
+        <input type="submit" value="提交"></input>
+    </form>
+
+</body>
+</html>

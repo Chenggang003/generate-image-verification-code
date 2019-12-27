@@ -1,0 +1,18 @@
+kaptcha:
+  height: 50
+  width: 150
+  content:
+    length: 5
+    source: abcdefghjklmnopqrstuvwxyz23456789
+    space: 2
+  font:
+    color: black
+    name: Arial
+    size: 40
+  background-color:
+    from: lightGray
+    to: white
+  border:
+    enabled: true
+    color: black
+    thickness: 1
