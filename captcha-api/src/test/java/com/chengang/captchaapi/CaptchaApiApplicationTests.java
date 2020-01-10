@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Arrays;
+import java.util.Random;
 
 
 @SpringBootTest
@@ -25,9 +26,12 @@ class CaptchaApiApplicationTests {
 
     @Test
     void contextLoads() throws Exception {
-//        Captcha specCaptcha = new SpecCaptcha(130, 48);
-//        specCaptcha.setCharType(Captcha.TYPE_ONLY_CHAR);
-//        generateImageCode(specCaptcha);
+
+        for (int i = 0; i < 1000; i++) {
+            Captcha specCaptcha = new SpecCaptcha(100, 50);
+            specCaptcha.setCharType(Captcha.TYPE_NUM_AND_UPPER);
+            specCaptcha.setLen(4);
+            generateImageCode(specCaptcha);
 
 //        Captcha chineseCaptcha = new ChineseCaptcha(130, 48);
 //        generateImageCode(chineseCaptcha);
@@ -39,15 +43,18 @@ class CaptchaApiApplicationTests {
 //        arithmeticCaptcha.setFont(Captcha.FONT_9);
 //        generateImageCode(arithmeticCaptcha);
 
-        Captcha gifCaptcha = new GifCaptcha(130, 48);
-        generateImageCode(gifCaptcha);
+//        Captcha gifCaptcha = new GifCaptcha(130, 48);
+//        generateImageCode(gifCaptcha);
+        }
+
     }
 
     private void generateImageCode(Captcha captcha) throws FileNotFoundException {
-        logger.info("验证码的的字符：{}", captcha.text());
-        logger.info("验证码的的字符数组：{}", Arrays.toString(captcha.textChar()));
-        logger.info("图片验证码BASE64进行编码：{}", captcha.toBase64());
-        OutputStream outputStream = new FileOutputStream(new File("E:/captcha/"+captcha.text()+".png"));
+//        logger.info("验证码的的字符：{}", captcha.text());
+//        logger.info("验证码的的字符数组：{}", Arrays.toString(captcha.textChar()));
+//        logger.info("图片验证码BASE64进行编码：{}", captcha.toBase64());
+        OutputStream outputStream = new FileOutputStream(new File("E:/github/cnn_captcha/image/origin/"+captcha.text()+"_"+System.currentTimeMillis()+new Random().nextInt(3) +".png"));
+//        OutputStream outputStream = new FileOutputStream(new File("E:/captcha/"+captcha.text()+"_"+System.currentTimeMillis()+new Random().nextInt(3) +".png"));
         captcha.out(outputStream);
     }
 }

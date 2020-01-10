@@ -3,7 +3,7 @@ kaptcha:
   width: 150
   content:
     length: 5
-    source: abcdefghjklmnopqrstuvwxyz23456789
+    source: abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
     space: 2
   font:
     color: black
